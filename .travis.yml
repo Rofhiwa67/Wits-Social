@@ -1,4 +1,6 @@
 language: android
+dist: trusty
+install: ant deps
 jdk: oraclejdk8
 
 env:
