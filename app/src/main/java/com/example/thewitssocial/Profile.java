@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -30,6 +32,13 @@ public class Profile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        //requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
+
+
+
         logout = (Button) findViewById(R.id.btnLogOut);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,10 +67,10 @@ public class Profile extends AppCompatActivity {
                     String Email1 = userProfile.Email;
                     String PhoneNo1 = userProfile.PhoneNo;
 
-                    NameTextView.setText("Name :" + Name1);
-                    SurnameTextView.setText("Surname :" + Surname1);
-                    EmailTextView.setText("Email :" + Email1);
-                    PhoneNoTextView.setText("Phone Number :" + PhoneNo1);
+                    NameTextView.setText( Name1);
+                    SurnameTextView.setText( Surname1);
+                    EmailTextView.setText( Email1);
+                    PhoneNoTextView.setText( + PhoneNo1);
                 }
             }
 
