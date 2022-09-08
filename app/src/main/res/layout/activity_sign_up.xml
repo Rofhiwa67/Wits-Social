@@ -4,33 +4,135 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ForgotPassword">
+    tools:context=".SignUp">
 
-    <EditText
-        android:id="@+id/EnterPasswordToReset"
-        android:layout_width="348dp"
-        android:layout_height="85dp"
-        android:layout_marginTop="224dp"
-        android:background="@drawable/custom_input"
-        android:ems="10"
-        android:hint="Enter Email"
-        android:inputType="textEmailAddress"
+    <TextView
+        android:id="@+id/witssocial2"
+        android:layout_width="194dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="64dp"
+        android:text="WITS SOCIAL"
+        android:textAlignment="center"
+
+
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="normal|bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.427"
+        app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonResetPassword"
-        android:layout_width="254dp"
-        android:layout_height="59dp"
+        android:id="@+id/btnRegister"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
         android:background="@drawable/custom_button"
-        android:text="RESET PASSWORD"
-        android:textColor="#FFFFFF"
+        android:text="Register"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+
+        android:textSize="20sp"
+        app:iconTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EnterPasswordToReset"
-        app:layout_constraintVertical_bias="0.157" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
+        app:layout_constraintVertical_bias="0.265" />
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="296dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/custom_input"
+
+
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+
+        android:paddingEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/witssocial2" />
+
+    <EditText
+        android:id="@+id/editTextSurname"
+        android:layout_width="296dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="20dp"
+
+        android:background="@drawable/custom_input"
+
+        android:drawablePadding="12dp"
+        android:ems="10"
+
+        android:hint="Surname"
+        android:inputType="textPersonName"
+        android:paddingEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+
+    <EditText
+        android:id="@+id/editTextPhoneNo"
+        android:layout_width="296dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_input"
+
+
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:hint="Phone Number"
+        android:inputType="textPersonName"
+
+        android:paddingEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSurname" />
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="296dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_input"
+
+
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:hint="Email Address"
+
+        android:inputType="textPersonName"
+        android:paddingEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhoneNo" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="296dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_input"
+
+
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPersonName"
+
+        android:paddingEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 </androidx.constraintlayout.widget.ConstraintLayout>
