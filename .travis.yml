@@ -28,16 +28,14 @@ before_script:
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
 
-steps:
-  - curl -Os https://uploader.codecov.io/latest/linux/codecov 
-  - chmod +x codecov 
-  - ./codecov -t ${CODECOV_TOKEN}
-
 script:
   # - ./gradlew assembleDebug
   # - ./gradlew createDebugCoverageReport #
   - echo "Travis branch is $TRAVIS_BRANCH"
   - echo "Travis branch is in pull request $TRAVIS_PULL+REQUEST"
+  - curl -Os https://uploader.codecov.io/latest/linux/codecov 
+  - chmod +x codecov 
+  - ./codecov -t ${CODECOV_TOKEN}
 
 after_success: #
   - bash <(curl -s https://codecov.io/bash) # 
