@@ -4,13 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/btnLogIn"
         android:layout_width="225dp"
         android:layout_height="48dp"
+        android:background="@drawable/custom_button"
+        android:backgroundTint="#000000"
         android:text="Login"
+        app:iconTint="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -20,11 +24,12 @@
 
     <TextView
         android:id="@+id/witssocial"
-        android:layout_width="194dp"
-        android:layout_height="66dp"
+        android:layout_width="229dp"
+        android:layout_height="43dp"
         android:layout_marginTop="80dp"
-        android:text="WITS SOCIAL"
+        android:text="WitsSocial"
         android:textAlignment="center"
+        android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,10 +39,14 @@
 
     <EditText
         android:id="@+id/editTextPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="312dp"
+        android:layout_height="69dp"
         android:layout_marginTop="44dp"
         android:ems="10"
+        android:drawablePadding="12dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/custom_lock"
+        android:paddingEnd="16dp"
         android:hint="password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,10 +56,17 @@
 
     <EditText
         android:id="@+id/editTextEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_width="312dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="72dp"
         android:ems="10"
+
+        android:drawableStart="@drawable/custom_email"
+
+        android:drawablePadding="12dp"
+        android:paddingEnd="16dp"
+        android:background="@drawable/custom_input"
+
         android:hint="email address"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,10 +81,10 @@
         android:text="Forgot password?"
         app:layout_constraintBottom_toTopOf="@+id/btnLogIn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.337"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
-        app:layout_constraintVertical_bias="0.328" />
+        app:layout_constraintVertical_bias="0.398" />
 
     <TextView
         android:id="@+id/textViewRegister"
