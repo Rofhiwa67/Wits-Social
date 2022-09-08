@@ -35,7 +35,7 @@ script:
   - echo "Travis branch is in pull request $TRAVIS_PULL+REQUEST"
   - curl -Os https://uploader.codecov.io/latest/linux/codecov 
   - chmod +x codecov 
-  - ./codecov -t ${CODECOV_TOKEN}
+  - ./codecov
 
 after_success: #
   - bash <(curl -s https://codecov.io/bash) # 
