@@ -14,7 +14,8 @@
         android:background="@drawable/custom_button"
         android:backgroundTint="#000000"
         android:text="Login"
-        app:iconTint="#000000"
+        android:textColor="#FFFFFF"
+        app:iconTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -22,18 +23,48 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
         app:layout_constraintVertical_bias="0.473" />
 
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="340dp"
+        android:layout_height="139dp"
+        android:layout_centerInParent="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.027"
+        app:srcCompat="@drawable/witslogo"
+        tools:ignore="MissingConstraints" />
+
     <TextView
         android:id="@+id/witssocial"
-        android:layout_width="229dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="80dp"
-        android:text="WitsSocial"
+        android:layout_width="161dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="88dp"
+        android:text="Social"
         android:textAlignment="center"
-        android:textColor="#000000"
+        android:textColor="#01508F"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.992"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/witssocial4"
+        android:layout_width="161dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="88dp"
+        android:text="WITS"
+        android:textAlignment="center"
+        android:textColor="#01508F"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.004"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,38 +72,38 @@
         android:id="@+id/editTextPassword"
         android:layout_width="312dp"
         android:layout_height="69dp"
-        android:layout_marginTop="44dp"
-        android:ems="10"
-        android:drawablePadding="12dp"
+        android:layout_marginTop="48dp"
         android:background="@drawable/custom_input"
         android:drawableStart="@drawable/custom_lock"
-        android:paddingEnd="16dp"
+        android:drawablePadding="12dp"
+        android:ems="10"
         android:hint="password"
         android:inputType="textPassword"
+        android:paddingEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="312dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="72dp"
-        android:ems="10"
+        android:layout_height="69dp"
+        android:layout_marginTop="208dp"
+
+        android:background="@drawable/custom_input"
 
         android:drawableStart="@drawable/custom_email"
-
         android:drawablePadding="12dp"
-        android:paddingEnd="16dp"
-        android:background="@drawable/custom_input"
+        android:ems="10"
 
         android:hint="email address"
         android:inputType="textEmailAddress"
+        android:paddingEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/witssocial" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewForgotPass"
@@ -84,7 +115,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
-        app:layout_constraintVertical_bias="0.398" />
+        app:layout_constraintVertical_bias="0.411" />
 
     <TextView
         android:id="@+id/textViewRegister"

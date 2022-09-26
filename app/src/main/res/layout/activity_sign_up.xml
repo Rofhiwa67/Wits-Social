@@ -6,34 +6,58 @@
     android:layout_height="match_parent"
     tools:context=".SignUp">
 
-    <TextView
-        android:id="@+id/witssocial2"
-        android:layout_width="194dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="64dp"
-        android:text="WITS SOCIAL"
-        android:textAlignment="center"
-
-
-        android:textColor="#000000"
-        android:textSize="24sp"
-        android:textStyle="normal|bold|italic"
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="340dp"
+        android:layout_height="139dp"
+        android:layout_centerInParent="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.46"
+        app:layout_constraintHorizontal_bias="0.577"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.027"
+        app:srcCompat="@drawable/witslogo"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/witssocial4"
+        android:layout_width="161dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="96dp"
+        android:text="WITS"
+        android:textAlignment="center"
+        android:textColor="#01508F"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.004"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/witssocial"
+        android:layout_width="161dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="100dp"
+        android:text="Social"
+        android:textAlignment="center"
+        android:textColor="#01508F"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnRegister"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
+        android:layout_width="131dp"
+        android:layout_height="51dp"
         android:background="@drawable/custom_button"
         android:text="Register"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-
-        android:textSize="20sp"
-        app:iconTint="@color/black"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -45,26 +69,26 @@
         android:id="@+id/editTextName"
         android:layout_width="296dp"
         android:layout_height="43dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="192dp"
+
+
         android:background="@drawable/custom_input"
-
-
         android:drawablePadding="12dp"
         android:ems="10"
         android:hint="Name"
-        android:inputType="textPersonName"
 
+        android:inputType="textPersonName"
         android:paddingEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/witssocial2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextSurname"
         android:layout_width="296dp"
         android:layout_height="43dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="28dp"
 
         android:background="@drawable/custom_input"
 
@@ -83,7 +107,7 @@
         android:id="@+id/editTextPhoneNo"
         android:layout_width="296dp"
         android:layout_height="43dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/custom_input"
 
 
@@ -94,7 +118,7 @@
 
         android:paddingEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextSurname" />
 
@@ -102,8 +126,9 @@
         android:id="@+id/editTextEmail"
         android:layout_width="296dp"
         android:layout_height="43dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/custom_input"
+
 
 
         android:drawablePadding="12dp"
@@ -121,7 +146,7 @@
         android:id="@+id/editTextPassword"
         android:layout_width="296dp"
         android:layout_height="43dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/custom_input"
 
 
