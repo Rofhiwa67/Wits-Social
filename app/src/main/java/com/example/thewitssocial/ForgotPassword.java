@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -30,6 +31,10 @@ public class ForgotPassword extends AppCompatActivity {
         emailEdittext = (EditText) findViewById(R.id.EnterPasswordToReset);
         resetPasswordButton = (Button) findViewById(R.id.buttonResetPassword);
         //progressBar = (ProgressBar) findViewById(R.id.progressBar);
+
+        //requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
 
         auth = FirebaseAuth.getInstance();
 

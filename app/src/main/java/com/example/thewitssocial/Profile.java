@@ -10,6 +10,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -26,7 +27,11 @@ public class Profile extends AppCompatActivity {
 
     private  String userID;
 
+    String Name1,Surname1, Email1, PhoneNo1;
+
     private Button logout;
+
+    TextView NameTextView, SurnameTextView, EmailTextView, PhoneNoTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,39 +43,29 @@ public class Profile extends AppCompatActivity {
         getSupportActionBar().hide();
 
 
-
-        logout = (Button) findViewById(R.id.btnLogOut);
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(Profile.this,MainActivity.class));
-            }
-        });
-
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
         userID = user.getUid();
 
-        final TextView NameTextView = (TextView) findViewById(R.id.textView2);
-        final TextView SurnameTextView = (TextView) findViewById(R.id.textView3);
-        final TextView EmailTextView = (TextView) findViewById(R.id.textView4);
-        final TextView PhoneNoTextView = (TextView) findViewById(R.id.textView5);
+            NameTextView = (TextView) findViewById(R.id.textView2);
+            SurnameTextView = (TextView) findViewById(R.id.textView3);
+            TextView EmailTextView = (TextView) findViewById(R.id.textView4);
+            TextView PhoneNoTextView = (TextView) findViewById(R.id.textView5);
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User userProfile = snapshot.getValue(User.class);
                 if(userProfile != null){
-                    String Name1 = userProfile.Name;
-                    String Surname1 = userProfile.Surname;
-                    String Email1 = userProfile.Email;
-                    String PhoneNo1 = userProfile.PhoneNo;
+                     Name1 = userProfile.Name;
+                     Surname1 = userProfile.Surname;
+                     Email1 = userProfile.Email;
+                     PhoneNo1 = userProfile.PhoneNo;
 
                     NameTextView.setText( Name1);
                     SurnameTextView.setText( Surname1);
                     EmailTextView.setText( Email1);
-                    PhoneNoTextView.setText( + PhoneNo1);
+                    PhoneNoTextView.setText( PhoneNo1);
                 }
             }
 
@@ -80,5 +75,19 @@ public class Profile extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void editProfile(View view) {
+
+        Intent intent = new Intent(this, editProfile.class);
+            intent.putExtra("name", Name1);
+            intent.putExtra("surname", Surname1);
+            intent.putExtra("email", Email1.toString());
+            intent.putExtra("phone", PhoneNo1 );
+            startActivity(intent);
+    }
+
+    public void test(View view) {
+        Toast.makeText(getApplicationContext(),Email1, Toast.LENGTH_SHORT).show();
     }
 }
