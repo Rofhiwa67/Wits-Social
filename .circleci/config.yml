@@ -5,10 +5,17 @@ orbs:
 
 jobs:
   build:
+    docker:
+      #cicleci image for JAVA version 1.8
+ #     - image: circleci/android:api-25-alpha
+      - image: ccistaging/android:api-32
     executor: android/android
     steps:
       - checkout
       - android/restore-build-cache
+      - run:
+          name: Chmod permissions #if permission for Gradlew Dependencies fail, use this.
+          command: sudo chmod +x ./gradlew
       - run:
           name: Download Dependencies
           command: ./gradlew androidDependencies      
