@@ -17,7 +17,7 @@ jobs:
           command: ./gradlew androidDependencies      
       - android/save-build-cache
       - run:
-          command: ./gradlew lint test
+          #command: ./gradlew lint test
       - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/ 
           path: app/build/reports
           destination: reports
