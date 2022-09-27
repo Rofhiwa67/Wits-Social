@@ -24,11 +24,6 @@ jobs:
     steps:
       # Checkout the code as the first step.
       - checkout
-      - run:
-          name: Download Dependencies
-          command: |
-          sudo chmod +x ./gradlew
-          ./gradlew androidDependencies 
 
       # The next step will run the unit tests
       - android/run-tests:
@@ -41,8 +36,9 @@ jobs:
 
       # And finally run the release build
       - run:
-          name: chmod permissions
-          command: chmod +x ./gradlew
+          name: Assemble release build
+          command: |
+            ./gradlew assembleRelease
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
