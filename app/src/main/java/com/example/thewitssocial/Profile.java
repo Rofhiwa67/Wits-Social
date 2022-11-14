@@ -47,14 +47,23 @@ public class Profile extends AppCompatActivity {
     FirebaseAuth mAuth;
 
 
+
+
     private  String userID;
 
+    /**
+     * initilzing string elements
+     */
     String Name1,Surname1, Email1, PhoneNo1;
 
-
+    /**
+     * initilzing buttons
+     */
     private Button logout, friends_btn;
 
-
+    /**
+     * initilzing textviews
+     */
 
     TextView NameTextView, SurnameTextView, EmailTextView, PhoneNoTextView;
 
@@ -65,10 +74,17 @@ public class Profile extends AppCompatActivity {
 
 
         //requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        /**
+         * hiding action bar
+         */
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
 
 
+        /**
+         *
+         */
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
         userID = user.getUid();
@@ -76,21 +92,26 @@ public class Profile extends AppCompatActivity {
         profileImageView = findViewById(R.id.profile_image);
 
 
-            NameTextView = (TextView) findViewById(R.id.textView2);
-            SurnameTextView = (TextView) findViewById(R.id.textView3);
-            TextView EmailTextView = (TextView) findViewById(R.id.textView4);
-            TextView PhoneNoTextView = (TextView) findViewById(R.id.textView5);
+        /**
+         * setting Textviews with id
+         */
+        NameTextView = (TextView) findViewById(R.id.textView2);
+        SurnameTextView = (TextView) findViewById(R.id.textView3);
+        TextView EmailTextView = (TextView) findViewById(R.id.textView4);
+        TextView PhoneNoTextView = (TextView) findViewById(R.id.textView5);
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User userProfile = snapshot.getValue(User.class);
                 if(userProfile != null){
-                     Name1 = userProfile.Name;
-                     Surname1 = userProfile.Surname;
-                     Email1 = userProfile.Email;
-                     PhoneNo1 = userProfile.PhoneNo;
-
+                    Name1 = userProfile.Name;
+                    Surname1 = userProfile.Surname;
+                    Email1 = userProfile.Email;
+                    PhoneNo1 = userProfile.PhoneNo;
+/**
+ * setting edit texts with respective current user data
+ */
                     NameTextView.setText( Name1);
                     SurnameTextView.setText( Surname1);
                     EmailTextView.setText( Email1);
@@ -115,11 +136,18 @@ public class Profile extends AppCompatActivity {
         else{
             reference.child(userID).addValueEventListener(new ValueEventListener() {
                 @Override
+                /**
+                 * Uloading pic if succesful toasts Profile changed l if fails toasts something went wrong
+                 */
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    if(snapshot.exists()){
-                        profileImageUrlv = snapshot.child("profileImage").getValue().toString();
-                        Picasso.get().load(profileImageUrlv).into(profileImageView);
+                    if(snapshot.exists() && snapshot.getChildrenCount()>0){
+                        if(snapshot.hasChild("profileImage")) {
+                            profileImageUrlv = snapshot.child("profileImage").getValue().toString();
+                            Picasso.get().load(profileImageUrlv).into(profileImageView);
+                            Toast.makeText(Profile.this,"Profile Changed", Toast.LENGTH_SHORT).show();
+                        }
                     }
+
                 }
 
                 @Override
@@ -131,25 +159,41 @@ public class Profile extends AppCompatActivity {
         }
     }
 
+    /**
+     * when you click LogOut button it sends you to home page
+     *
+     */
     private void SendUserToLoginActivity() {
         Intent intent = new Intent(Profile.this, MainActivity.class);
         startActivity(intent);
     }
 
+
+    /**
+     * sending user data listed below to editProfile page in Intenyt intent
+     */
     public void editProfile(View view) {
 
         Intent intent = new Intent(this, editProfile.class);
-            intent.putExtra("name", Name1);
-            intent.putExtra("surname", Surname1);
-            intent.putExtra("email", Email1.toString());
-            intent.putExtra("phone", PhoneNo1 );
-            startActivity(intent);
+        intent.putExtra("name", Name1);
+        intent.putExtra("surname", Surname1);
+        intent.putExtra("email", Email1.toString());
+        intent.putExtra("phone", PhoneNo1 );
+        startActivity(intent);
     }
 
+    /**
+     * checking if retrieving data correctly
+     *
+     */
     public void test(View view) {
         Toast.makeText(getApplicationContext(),Email1, Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * when you click reset password button it sends you to forget password page
+     *
+     */
     public void reset(View view) {
         Intent intent = new Intent(this,ForgotPassword.class);
         startActivity(intent);
